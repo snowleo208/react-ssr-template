@@ -21,11 +21,25 @@ Output are all minified with hash filenames and serve all files in `/dist` in pr
 
 ### Install
 
-Please install `npm` first and use this command:
+Install git in your machine and clone this repo with:
+
+```
+git clone https://github.com/snowleo208/react-ssr-template.git
+```
+
+Then, install `npm` first and use this command:
 
 ```
 npm install
 ```
+
+Open development server with:
+
+```
+npm run dev
+```
+
+Finally, you should see `localhost:3000` in your browser. If you see a blank page, refresh it after your console said 'Compiled successfully'.
 
 ### Usage
 
@@ -34,9 +48,9 @@ After install all dependencies, you can use these commands to open or build your
 ```
 npm start - start production server
 npm run build - build your apps
-npm run dev - start both client and backend server
+npm run dev - start both client and backend development server
 npm run server - start backend server
 npm run client - start client server (with hot reloading)
 ```
 
-Enjoy!
+Enjoy coding!
