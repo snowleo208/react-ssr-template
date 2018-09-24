@@ -13,6 +13,7 @@ Using these tools:
 - Sass (With autoprefixer)
 - Webpack
 - Eslint
+- React-helmet (For changing head, meta tags automatically, SEO-friendly)
 
 Output are all minified with hash filenames and serve all files in `/dist` in production.
 

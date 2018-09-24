@@ -13,8 +13,13 @@ import { Provider as ReduxProvider } from 'react-redux';
 import Container from '../src/components/Container';
 
 const app = express();
+const port = 8080;
 
 app.use('/dist', express.static(path.resolve(__dirname, '../dist')));
+
+app.get('/api/data', (req, res) => {
+  res.json({ data: 'default', id: 1, desc: 'API call succeeds.' });
+});
 
 app.get('/api/*', (req, res) => {
   res.send('set your api routes before the following react routes');
@@ -45,11 +50,12 @@ app.get('/*', (req, res) => {
       return res.status(404).end();
     }
 
+    // inject the rendered app into webpack generated html
+    // change body content, redux state & head and meta tag contents
+
     const headRegex = /(<title>).{1,}(<\/title>)/g;
     const metaRegex = /(<meta name="description").{1,}(\/>)/g;
 
-    // inject the rendered app into webpack generated html
-    // change body content, redux state & head and meta tag contents
     return res.end(
       data
         .replace(metaRegex, `${helmet.meta.toString()}`)
@@ -63,5 +69,5 @@ app.get('/*', (req, res) => {
   });
 });
 
-app.listen(8080);
-console.log('Server starts at port 8080');
+app.listen(port);
+console.log(`Server starts at port ${port}`);

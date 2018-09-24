@@ -16,6 +16,12 @@ class Container extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch('./api/data')
+      .then(data => data.json())
+      .then(json => console.log(json));
+  }
+
   render() {
     return (
       <div>

@@ -6,7 +6,7 @@
     "scripts": {
         "start": "cross-env NODE_ENV=production node index.js",
         "build": "webpack --mode production --progress  --config webpack.prod.js",
-        "dev": "npm-run-all client server",
+        "dev": "npm-run-all -p client server",
         "client": "webpack-dev-server --hot --inline --config webpack.dev.js",
         "server": "nodemon index.js"
     },

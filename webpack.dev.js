@@ -9,7 +9,7 @@ module.exports = merge(common, {
     output: {
         filename: "[name].[hash:5].js",
         chunkFilename: "[name].[contenthash:5].js",
-        publicPath: 'http://localhost:3000/dist/'
+        publicPath: '/dist/'
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
