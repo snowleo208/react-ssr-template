@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
+
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
+
 import { hot } from 'react-hot-loader';
-import '../css/main.sass';
 
 class Container extends React.Component {
   constructor() {

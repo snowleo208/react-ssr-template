@@ -50,6 +50,15 @@ module.exports = {
                     name: '[name].[ext]',
                     publicPath: './dist/'
                 }
+            },
+            {
+                test: /\.(css|scss|sass)$/,
+                use: [
+                    'style-loader',
+                    'css-loader?url=false',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
             }
         ]
     },

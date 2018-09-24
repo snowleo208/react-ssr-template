@@ -18,40 +18,30 @@ module.exports = merge(common, {
         headers: {
             'Access-Control-Allow-Origin': '*'
         },
-        // proxy: {
-        //     '/api': 'http://localhost:8080'
-        // },
+        proxy: {
+            '/api': 'http://localhost:8080'
+        },
         open: 'http://localhost:3000/'
     },
     module: {
         rules: [{
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: [{
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-env', '@babel/preset-react'],
-                            plugins: [
-                                '@babel/plugin-proposal-class-properties',
-                                'react-hot-loader/babel'
-                            ]
-                        }
-                    },
-                    {
-                        loader: 'eslint-loader'
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                        plugins: [
+                            '@babel/plugin-proposal-class-properties',
+                            'react-hot-loader/babel'
+                        ]
                     }
-                ]
-            },
-            {
-                test: /\.(css|scss|sass)$/,
-                use: [
-                    'style-loader',
-                    'css-loader?url=false',
-                    'postcss-loader',
-                    'sass-loader'
-                ]
-            }
-        ]
+                },
+                {
+                    loader: 'eslint-loader'
+                }
+            ]
+        }, ]
     },
     plugins: [
         new webpack.DefinePlugin({

@@ -4,15 +4,15 @@ A simple React SSR template based on [tutorial from Freecodecamp](https://medium
 
 Using these tools:
 
-React,
-React-router,
-React-hot-loader,
-Babel 7,
-Express/Node,
-Sass (With autoprefixer)
-Webpack,
-Eslint,
-Babel
+- React
+- React-router
+- React-hot-loader
+- Redux
+- Babel 7
+- Express/Node
+- Sass (With autoprefixer)
+- Webpack
+- Eslint
 
 Output are all minified with hash filenames and serve all files in `/dist` in production.
 
