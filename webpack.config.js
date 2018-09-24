@@ -69,7 +69,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             template: './src/template.html',
-            filename: './dist/index.html'
+            filename: './index.html'
         }),
         new HtmlWebpackHarddiskPlugin({
             outputPath: path.resolve(__dirname, './')

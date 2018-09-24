@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
+import Helmet from 'react-helmet';
 
 import Home from './Home';
 import About from './About';
@@ -29,6 +30,11 @@ class Container extends React.Component {
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
         </Switch>
+
+        <Helmet>
+          <title>React SSR Template</title>
+          <meta name="description" content="This is React SSR Template!" />
+        </Helmet>
       </div>
     );
   }

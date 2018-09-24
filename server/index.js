@@ -5,11 +5,12 @@ import fs from 'fs';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import Container from '../src/components/Container';
 import { createStore } from 'redux';
 import mainReducer from '../src/reducers';
-
+import { Helmet } from 'react-helmet';
 import { Provider as ReduxProvider } from 'react-redux';
+
+import Container from '../src/components/Container';
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.get('/*', (req, res) => {
     </ReduxProvider>
   );
   const reactDom = renderToString(jsx);
+  const helmet = Helmet.renderStatic();
 
   res.writeHead(200, { 'Content-Type': 'text/html' });
 
@@ -43,9 +45,15 @@ app.get('/*', (req, res) => {
       return res.status(404).end();
     }
 
-    // inject the rendered app into webpack generated html and send it
+    const headRegex = /(<title>).{1,}(<\/title>)/g;
+    const metaRegex = /(<meta name="description").{1,}(\/>)/g;
+
+    // inject the rendered app into webpack generated html
+    // change body content, redux state & head and meta tag contents
     return res.end(
       data
+        .replace(metaRegex, `${helmet.meta.toString()}`)
+        .replace(headRegex, `${helmet.title.toString()}`)
         .replace('<div id="app"></div>', `<div id="app">${reactDom}</div>`)
         .replace(
           '<script></script>',

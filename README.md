@@ -28,7 +28,7 @@ npm install
 
 ### Usage
 
-After install all dependencies, you can use these command to open or build your apps.
+After install all dependencies, you can use these commands to open or build your apps.
 
 ```
 npm start - start production server
