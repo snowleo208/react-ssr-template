@@ -1,4 +1,4 @@
-# React Sever Rendering Template
+# React Server-side Rendering Boilerplate
 
 A simple React SSR template based on [tutorial from Freecodecamp](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4).
 
@@ -39,7 +39,13 @@ Open development server with:
 npm run dev
 ```
 
-Finally, you should see `localhost:3000` in your browser. If you see a blank page, refresh it after your console said 'Compiled successfully'.
+Finally, you should see `localhost:3000` in your browser. If you see a blank page, refresh it after your console said "Compiled successfully".
+
+You can also use this command to build your project.
+
+```
+npm build
+```
 
 ### Usage
 
